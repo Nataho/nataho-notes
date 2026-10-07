@@ -32,6 +32,9 @@ body {
 #fallback-msg h3{
     color: #f85149;
 }
+#offline-msg h3 {
+    color: #f85149;
+}
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
