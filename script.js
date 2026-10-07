@@ -1,8 +1,10 @@
 const targetUrl = "https://hashinata.tadpole-cliff.ts.net/notes";
 const healthCheckUrl = "https://hashinata.tadpole-cliff.ts.net/notes/"; // Or a specific lightweight file/image
+const alternativeUrl = "https://hashinata.tadpole-cliff.ts.net/notes/docker.html";
 
 document.getElementById('connected-link').href = targetUrl;
 document.getElementById('fallback-link').href = targetUrl;
+document.getElementById('alternative-link').href = alternativeUrl;
 
 const loader = document.getElementById('loader');
 const connectedMsg = document.getElementById('connected-msg');
