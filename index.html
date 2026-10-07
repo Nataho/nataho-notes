@@ -4,78 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Checker</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #0d1117;
-            color: #c9d1d9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            max-width: 400px;
-        }
-        .spinner {
-            border: 3px solid #30363d;
-            border-top: 3px solid #58a6ff;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1.5rem auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .hidden { display: none; }
-        .error { color: #f85149; }
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.75rem 1.5rem;
-            background: #238636;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-        .btn:hover { background: #2ea043; }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div id="loader">
             <div class="spinner"></div>
-            <p>Checking server status...</p>
+            <p id="status-text">Checking server status...</p>
         </div>
+
+        <div id="connected-msg" class="hidden">
+            <h3>Server Found!</h3>
+            <p>Redirecting in <span id="countdown">3</span>s. Click below to enter manually:</p>
+            <a id="connected-link" href="#" class="btn">Open Server</a>
+        </div>
+
         <div id="fallback-msg" class="hidden">
             <h3>Server Check Interrupted</h3>
-            <p>Browsers often block background checks to secure tunnels. Click below to enter directly:</p>
-            <a id="direct-link" href="#" class="btn">Open Server</a>
+            <p>Browsers often block automatic redirects. Click below to enter manually:</p>
+            <a id="fallback-link" href="#" class="btn">Open Server</a>
         </div>
     </div>
-
-    <script>
-        const targetUrl = "https://hashinata.tadpole-cliff.ts.net/notes";
-        document.getElementById('direct-link').href = targetUrl;
-
-        // Attempt navigation or fallback gracefully after a short timeout
-        const timer = setTimeout(() => {
-            document.getElementById('loader').classList.add('hidden');
-            document.getElementById('fallback-msg').classList.remove('hidden');
-        }, 3000);
-
-        // Try automatic redirection via direct assignment attempt
-        window.location.href = targetUrl;
-    </script>
 </body>
 </html>
