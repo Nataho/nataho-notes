@@ -30,7 +30,7 @@
             width: 30px;
             height: 30px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 1rem auto;
+            margin: 0 auto 1.5rem auto;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -38,6 +38,17 @@
         }
         .hidden { display: none; }
         .error { color: #f85149; }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .btn:hover { background: #2ea043; }
     </style>
 </head>
 <body>
@@ -46,40 +57,25 @@
             <div class="spinner"></div>
             <p>Checking server status...</p>
         </div>
-        <div id="offline-msg" class="hidden">
-            <h3 class="error">Server is offline</h3>
-            <p>Please contact developer.</p>
+        <div id="fallback-msg" class="hidden">
+            <h3>Server Check Interrupted</h3>
+            <p>Browsers often block background checks to secure tunnels. Click below to enter directly:</p>
+            <a id="direct-link" href="#" class="btn">Open Server</a>
         </div>
     </div>
 
     <script>
         const targetUrl = "https://hashinata.tadpole-cliff.ts.net";
+        document.getElementById('direct-link').href = targetUrl;
 
-        async function checkServer() {
-            try {
-                // Use 'no-cors' or a lightweight endpoint check. 
-                // Fetching with a short timeout via AbortController.
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 4000);
+        // Attempt navigation or fallback gracefully after a short timeout
+        const timer = setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            document.getElementById('fallback-msg').classList.remove('hidden');
+        }, 3000);
 
-                await fetch(targetUrl, {
-                    method: 'GET',
-                    mode: 'no-cors',
-                    signal: controller.signal
-                });
-                
-                clearTimeout(timeoutId);
-
-                // If fetch completes (even opaque response via no-cors), the funnel is up.
-                window.location.href = targetUrl;
-            } catch (error) {
-                // If it times out or fails to connect, the server is offline.
-                document.getElementById('loader').classList.add('hidden');
-                document.getElementById('offline-msg').classList.remove('hidden');
-            }
-        }
-
-        checkServer();
+        // Try automatic redirection via direct assignment attempt
+        window.location.href = targetUrl;
     </script>
 </body>
 </html>
