@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[School]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>School</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 08 Oct 2026 00:55:05 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 08 Oct 2026 00:55:03 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Docker]]></title><description><![CDATA[docker is an app that makes migrating systems, servers, databases, etc. a lot easier.
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[School]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>School</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 08 Oct 2026 01:10:46 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 08 Oct 2026 01:10:44 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Docker]]></title><description><![CDATA[docker is an app that makes migrating systems, servers, databases, etc. a lot easier.
 the way docker does it is with <a data-href="#Images" href="its-300/subnotes/docker.html#Images_0" class="internal-link" target="_self" rel="noopener nofollow">Images</a> and <a data-href="#Containers" href="its-300/subnotes/docker.html#Containers_0" class="internal-link" target="_self" rel="noopener nofollow">Containers</a>.
 just let the next machine install docker only, and it's ready to migrate!if you don't use docker when migrating. the system might break
 it could be because of
@@ -26,7 +26,20 @@ Example
 docker run -d --name webdev-phpmyadmin --network webdev-network -e PMA_HOST=webdev-mysql -p 3311:80 phpmyadmin DISCLAIMER
 DO NOT COPY THIS. THIS COMMAND IS IRRELEVANT TO YOUR PROJECTS
 docker run -d --name EB_mysql --network EB_Network -v EB-db-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=EB_shop -p 6967:3306 mysql:8.0
-docker run -d --name EB_phpmyadmin --network EB_Network -e PMA_HOST=EB_mysql -p 6969:80 phpmyadmin on symfony to connect to your database you have to open your .env file on the root rolder.MYSQL_USER=
+docker run -d --name EB_phpmyadmin --network EB_Network -e PMA_HOST=EB_mysql -p 6969:80 phpmyadmin From the notes of Sir Ariel Bensingdocker build -t symfony-app
+docker run --name symfony-app-demo --network platform-network -p 8000:8000
+symfony-app
+docker network create platform-network
+docker run -d --name symfony-db --network platform-network -v symfony-db-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=app_db -p 3310:3306 mysql:8.0
+docker run -d --name symfony-pma --network platform-network -p 8081:80 -e PMA_HOST=symfony-db phpmyadmin
+docker exec -it symfony-app-demo “symfony command”
+docker network rm platform-network
+docker rm “container name”
+docker rmi “image name”
+docker network “network name”
+docker network rm “network name”
+docker stop “container name”
+on symfony to connect to your database you have to open your .env file on the root rolder.MYSQL_USER=
 MYSQL_PASSWORD=
 MYSQL_IP=
 MYSQL_PORT=
@@ -38,7 +51,7 @@ MYSQL_PASSWORD=
 MYSQL_IP=127.0.0.1
 MYSQL_PORT=3306
 MYSQL_DATABASE=eb_shop <br>on <a data-href="#Making Variables" href="its-300/subnotes/docker.html#Making_Variables_0" class="internal-link" target="_self" rel="noopener nofollow">Making Variables</a> we'll use the created variables there to connect to the database.DATABASE_URL="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${MYSQL_IP}:${MYSQL_PORT}/${MYSQL_DATABASE}?serverVersion=10.11.2-MariaDB&amp;charset=utf8mb4"
-you can copy this if you want]]></description><link>its-300/subnotes/docker.html</link><guid isPermaLink="false">ITS 300/subnotes/Docker.md</guid><pubDate>Thu, 08 Oct 2026 00:54:27 GMT</pubDate></item><item><title><![CDATA[CSS3 and CSS Frameworks]]></title><description><![CDATA[
+you can copy this if you want]]></description><link>its-300/subnotes/docker.html</link><guid isPermaLink="false">ITS 300/subnotes/Docker.md</guid><pubDate>Thu, 08 Oct 2026 01:10:05 GMT</pubDate></item><item><title><![CDATA[CSS3 and CSS Frameworks]]></title><description><![CDATA[
 is a language used to specify the formatting of an HTML document Selector h1, h, p, div, head
 Declaration block {}
 Property color, font-size, etc
