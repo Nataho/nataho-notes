@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[School]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>School</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 07 Oct 2026 10:26:09 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 07 Oct 2026 10:26:07 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Docker]]></title><description><![CDATA[docker is an app that makes migrating systems, servers, databases, etc. a lot easier.
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[School]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>School</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 08 Oct 2026 00:55:05 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 08 Oct 2026 00:55:03 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Docker]]></title><description><![CDATA[docker is an app that makes migrating systems, servers, databases, etc. a lot easier.
 the way docker does it is with <a data-href="#Images" href="its-300/subnotes/docker.html#Images_0" class="internal-link" target="_self" rel="noopener nofollow">Images</a> and <a data-href="#Containers" href="its-300/subnotes/docker.html#Containers_0" class="internal-link" target="_self" rel="noopener nofollow">Containers</a>.
 just let the next machine install docker only, and it's ready to migrate!if you don't use docker when migrating. the system might break
 it could be because of
@@ -26,7 +26,55 @@ Example
 docker run -d --name webdev-phpmyadmin --network webdev-network -e PMA_HOST=webdev-mysql -p 3311:80 phpmyadmin DISCLAIMER
 DO NOT COPY THIS. THIS COMMAND IS IRRELEVANT TO YOUR PROJECTS
 docker run -d --name EB_mysql --network EB_Network -v EB-db-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=EB_shop -p 6967:3306 mysql:8.0
-docker run -d --name EB_phpmyadmin --network EB_Network -e PMA_HOST=EB_mysql -p 6969:80 phpmyadmin ]]></description><link>its-300/subnotes/docker.html</link><guid isPermaLink="false">ITS 300/subnotes/Docker.md</guid><pubDate>Wed, 07 Oct 2026 10:25:57 GMT</pubDate></item><item><title><![CDATA[Symfony]]></title><description><![CDATA[Prerequisite
+docker run -d --name EB_phpmyadmin --network EB_Network -e PMA_HOST=EB_mysql -p 6969:80 phpmyadmin on symfony to connect to your database you have to open your .env file on the root rolder.MYSQL_USER=
+MYSQL_PASSWORD=
+MYSQL_IP=
+MYSQL_PORT=
+MYSQL_DATABASE=
+Example
+My database has these variables to connect to. it doesn't mean you can copy this and make it work on yours. you have to provide your own values
+MYSQL_USER=root
+MYSQL_PASSWORD=
+MYSQL_IP=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_DATABASE=eb_shop <br>on <a data-href="#Making Variables" href="its-300/subnotes/docker.html#Making_Variables_0" class="internal-link" target="_self" rel="noopener nofollow">Making Variables</a> we'll use the created variables there to connect to the database.DATABASE_URL="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${MYSQL_IP}:${MYSQL_PORT}/${MYSQL_DATABASE}?serverVersion=10.11.2-MariaDB&amp;charset=utf8mb4"
+you can copy this if you want]]></description><link>its-300/subnotes/docker.html</link><guid isPermaLink="false">ITS 300/subnotes/Docker.md</guid><pubDate>Thu, 08 Oct 2026 00:54:27 GMT</pubDate></item><item><title><![CDATA[CSS3 and CSS Frameworks]]></title><description><![CDATA[
+is a language used to specify the formatting of an HTML document Selector h1, h, p, div, head
+Declaration block {}
+Property color, font-size, etc
+Value color:blue
+h1 {color:blue; font-size:12px} style definitions are defined on an external file
+embedded to an HTML document using the link tag&lt;link rel="stylesheet" href="file/loc"&gt;
+&lt;head&gt;
+&lt;style&gt;
+.classname{}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;h2 style="color:red;"&gt;&lt;/h2&gt;
+there is a cascading thing if there is no other styles
+1st inline
+2nd internal
+3rd external
+browser defaultsthe var() function is used to insert the value of CSS variable
+CSS variables can have a global or local scope
+To create a global variable, declare it inside the :root selector, the :root selector matches the document's root element.
+A CSS variable name must begin with -- :root{
+--primary-color:red;
+} h1{
+color:var(--primary-color)
+}
+Are the units of measurements used in cssa box that wraps around every HTML elementBackground properties of elementsADDME - add css transforms tableADDME - add css transition propertiesthis is a manual animation
+not advisableis used to define a state of an elementselector:pseudo-classes{color:white} h2:first_child{
+color:red
+}
+All - All used for all media types devices
+Print - used for printers
+Screen - used for computer screens, tablets, smartphones
+Speesh - used for screen readers that "reads" the page out loud@media [type of media] and (minimum) and (maximum)
+@media screen and (min-width:400px){
+} it gives you pre-built components out of the box
+used for prototyping and generic websites used for complex and customizable elements and components.
+]]></description><link>its-300/subnotes/css3-and-css-frameworks.html</link><guid isPermaLink="false">ITS 300/subnotes/CSS3 and CSS Frameworks.md</guid><pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate></item><item><title><![CDATA[Symfony]]></title><description><![CDATA[Prerequisite
 Needs PHP 8.3 and above
 Need Internetsymfony new [Project Name] --webapp
 symfony server:start

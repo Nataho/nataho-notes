@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="loader">
+            <div class="spinner"></div>
+            <p id="status-text">Checking server status...</p>
+        </div>
+
+        <div id="connected-msg" class="hidden">
+            <h3>Server Found!</h3>
+            <p>Redirecting in <span id="countdown">3</span>s. Click below to enter manually:</p>
+            <a id="connected-link" href="#" class="btn">Open Server</a>
+        </div>
+
+        <div id="fallback-msg" class="hidden">
+            <h3>Server Check Interrupted</h3>
+            <p>Browsers often block automatic redirects. Click below to enter manually:</p>
+            <a id="fallback-link" href="#" class="btn">Open Server</a>
+        </div>
+
+        <div id="offline-msg" class="hidden">
+            <h3>Server Not Found</h3>
+            <p>Unable to connect to the notes server. Please contact the developer.</p>
+        </div>
+    </div>
+</body>
+</html>
