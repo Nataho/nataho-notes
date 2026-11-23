@@ -8,7 +8,7 @@
 <meta name="description" content="Lavhanan Laundry Hub - Project Assistant — Docs documentation">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%231b1b1d%22%2F%3E%3Cpath%20d%3D%22M7%206.5v11A1.5%201.5%200%200%200%208.5%2019H18V5H8.5A1.5%201.5%200%200%200%207%206.5Z%20M10%209h5M10%2012h5%22%20fill%3D%22none%22%20stroke%3D%22%2325c2a3%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
 <title>Lavhanan Laundry Hub - Project Assistant | Docs</title>
-<link rel="stylesheet" href="../../assets/style.css?v=mwszu21j">
+<link rel="stylesheet" href="../../assets/style.css?v=mwtf8xh3">
 </head>
 <body data-page="its-304/projects/lavhanan-laundry-hub-project-assistant.html" data-root="../../" class="">
 <nav class="navbar"><div class="navbar-inner"><button class="hamburger" type="button" aria-label="Toggle navigation"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button><a class="navbar-brand" href="../../"><svg class="logo" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span>Docs</span></a><div class="navbar-search"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" placeholder="Search docs…" aria-label="Search" spellcheck="false"></div><a class="navbar-graph" href="../../graph.html" aria-label="Open graph view"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="3"/><circle cx="19" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M12 15v-3"/><path d="M7.5 7.5 10 12l2 1"/><path d="M16.5 7.5 14 12l-2 1"/></svg><span>Graph</span></a></div></nav><div class="search-results" role="listbox"></div>
@@ -51,7 +51,23 @@
 <h2 id="how-it-is-built">How it is built</h2>
 <h3 id="chat">Chat</h3>
 <ul>
-<li>Symfony route <code>/assistant</code> + <code>templates/assistant/index.html.twig</code>; brand colors, mobile layout, file upload, polling.</li>
+<li>Symfony route <code>/assistant</code> + <code>templates/assistant/index.html.twig</code>; brand colors, mobile layout, file upload.</li>
+<li>Stimulus controller <code>assets/controllers/assistant_chat_controller.js</code> keeps the thread live:<ul>
+<li>polls <code>/assistant/status</code> every 5 seconds while idle and every 2 seconds while a reply is pending,</li>
+<li>reloads when the last message id changes, the last status changes (pending → done), or a visible “Working…” bubble is no longer pending,</li>
+<li>the status endpoint returns only <code>last_id</code>, <code>last_status</code>, and <code>pending</code> — it does not hydrate message contents,</li>
+<li>pauses while the tab is hidden and checks immediately when it returns,</li>
+<li>saves the draft and scroll position across reloads,</li>
+<li><code>Enter</code> sends, <code>Shift+Enter</code> adds a newline,</li>
+<li>paste a screenshot or file anywhere on the chat page, or drag files in; the browser validates type/size/count and shows an attachment tray with thumbnails and remove buttons,</li>
+<li>re-attaches up to 3 recent images (current message first, then the most recent earlier messages) so a follow-up can ask about a screenshot sent in a previous turn; the same images go to both judges and the revision pass,</li>
+<li>wraps Markdown tables so wide tables scroll inside the message,</li>
+<li>adds a copy button for the publish phrase.</li>
+</ul>
+</li>
+<li>A right-side <strong>Goal &amp; progress</strong> rail shows the project goal, a document-snapshot progress bar (done / in progress / not started), the checklist count, missing-marker/open-question counts, and the teammate&#39;s personal <strong>My to-do</strong> list. To-dos are added only when the teammate explicitly asks; the assistant never dumps the whole checklist into the rail.</li>
+<li>Personal to-dos live in the <code>assistant_goals</code> table (<code>goal_add</code> / <code>goal_done</code> / <code>goal_replace</code> model actions); the teammate can tick or remove them directly in the sidebar. <code>goal_replace</code> swaps the whole list when the teammate asks to change it, and an approved screenshot automatically marks its matching personal to-do done.</li>
+<li>The header shows a <strong>Live/Offline</strong> indicator and a manual <strong>Refresh</strong> button.</li>
 <li>Messages, attachments, publish requests, and audit events are stored in MySQL (<code>assistant_*</code> tables).</li>
 <li>A Messenger worker handles the model call and the publish job:<div class="code-block" data-lang="bash"><div class="code-topbar"><span class="code-lang">bash</span><button class="code-copy" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>Copy</span></button></div><pre><code class="hljs">symfony console messenger:consume async</code></pre></div></li>
 </ul>
@@ -63,7 +79,10 @@
   <span class="hljs-attr">&quot;reply&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">&quot;note_patches&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;file&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;draft&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;old&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;new&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">&quot;request_publish&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">&quot;owner_message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span>
+  <span class="hljs-attr">&quot;owner_message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;goal_add&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;goal_done&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;goal_replace&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span></code></pre></div></li>
 <li>The model has <strong>no tools</strong>: no shell, no file access, no browser, no git. Symfony validates and applies every action.</li>
 </ul>
@@ -103,8 +122,8 @@
 <p>Mark messages read from the inbox. No SMTP is required.</p>
 <h2 id="verification">Verification</h2>
 <ul>
-<li><strong>65 tests / 335 assertions</strong>, all green.</li>
-<li>New tests: <code>AssistantTest</code> (access, chat, judge context, patch-applies-when-reply-fails, owner revert, partial publish, magic word/publish/compaction), <code>AssistantNotesTest</code> (patch/diff/backup/restore/read-only/ambiguity), <code>AssistantMagicWordTest</code>, <code>AssistantAttachmentStoreTest</code>.</li>
+<li><strong>74 tests / 411 assertions</strong>, all green.</li>
+<li>New tests: <code>AssistantTest</code> (access, chat, judge context, patch-applies-when-reply-fails, owner revert, partial publish, magic word/publish/compaction, status endpoint, earlier-image context for the model, judges, and revision, goal sidebar, explicit goal add, automatic goal completion from an approved screenshot, goal replace, goal toggle/remove), <code>AssistantGoalBoardTest</code> (goal/progress parsing), <code>AssistantNotesTest</code> (patch/diff/backup/restore/read-only/ambiguity), <code>AssistantMagicWordTest</code>, <code>AssistantAttachmentStoreTest</code>.</li>
 <li>Live smoke: real model answered a question, both judges returned pass, no notes changed; earlier live smoke verified the primary model and the Messenger path.</li>
 <li>PDF/DOCX extraction verified against the actual format docx and rubric PDF.</li>
 <li><code>lint:container</code> and <code>lint:twig</code> pass.</li>
@@ -122,6 +141,12 @@
 <li>Blocked replies now start with <strong>Nothing was changed</strong>, and the model is instructed to phrase edits as proposals. Judges receive chat history so a name given earlier can be applied by a later “apply that”.</li>
 <li>Judge verdicts are split: patch issues block the edit, reply issues only withhold the reply. This stops a wording error from discarding a correct patch.</li>
 <li>Publishing the notes site is allowed while <code>[MISSING]</code> markers remain; only contradictions, invented facts, and draft/checklist/progress drift are blocked.</li>
+<li>The old inline chat poller only ran when the page rendered a pending message; Turbo form submissions replaced the body without re-running the head script. The new Stimulus controller reconnects after Turbo navigation and polls by <code>last_id</code>, so new replies appear without a manual refresh.</li>
+<li>Personal to-dos are opt-in: <code>goal_add</code> is only populated when the teammate says “add this to my goals” or similar. <code>goal_replace</code> is used when they ask to change/replace the whole list; it removes the old goals and adds the new list. The assistant must not add the whole checklist or all missing items.</li>
+<li>The sidebar’s main bar uses the progress note’s <strong>Snapshot</strong> (✅ done, 🟡 in progress, ⬜ not started). The checklist count is separate because checklist ticks only happen when the item is in the Word file — so it can sit at 0/127 while the draft is well advanced.</li>
+<li>A “replace the list” request previously only added the new items and left the old aggregate open. <code>goal_replace</code> now clears the old list first; the reply must not claim it was replaced — Symfony appends the confirmation.</li>
+<li>When the teammate sends a screenshot/file that matches a personal to-do and the assistant judges it acceptable, it marks that to-do done automatically. The shared checklist still ticks only when the content is in the Word file.</li>
+<li><code>phpunit.dist.xml</code> sets <code>memory_limit=512M</code>; the persistent test DB has grown enough that the default 128M can end the PHP process mid-suite.</li>
 <li>The demo seed originally found an existing customer account at <code>sam@lavhanan.test</code>; the seed now upgrades it to <code>ROLE_TEAMMATE</code> and updates the name.</li>
 <li>The test DB keeps rows between runs; assistant tests use a temp notes directory (<code>var/assistant/test-notes</code>) and a fake model runner (<code>FakeAssistantModelRunner</code>).</li>
 </ul>
@@ -140,6 +165,6 @@
 </div></main>
 <aside class="sidebar sidebar-right"><h4 class="toc-heading">On this page</h4><nav class="toc"><ul><li><a href="#who-can-use-it">Who can use it</a></li><li><a href="#what-it-does">What it does</a></li><li><a href="#how-it-is-built">How it is built</a><ul><li><a href="#chat">Chat</a></li><li><a href="#model">Model</a></li><li><a href="#two-judges">Two judges</a></li><li><a href="#notes-sync">Notes sync</a></li><li><a href="#publish">Publish</a></li><li><a href="#owner-inbox">Owner inbox</a></li></ul></li><li><a href="#verification">Verification</a></li><li><a href="#gotchas">Gotchas</a></li><li><a href="#open-items">Open items</a></li></ul></nav></aside>
 </div>
-<script src="../../assets/site.js?v=mwszu21j"></script>
+<script src="../../assets/site.js?v=mwtf8xh3"></script>
 </body>
 </html>
