@@ -8,7 +8,7 @@
 <meta name="description" content="Lavhanan Laundry Hub - Final Requirement Document — Docs documentation">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%231b1b1d%22%2F%3E%3Cpath%20d%3D%22M7%206.5v11A1.5%201.5%200%200%200%208.5%2019H18V5H8.5A1.5%201.5%200%200%200%207%206.5Z%20M10%209h5M10%2012h5%22%20fill%3D%22none%22%20stroke%3D%22%2325c2a3%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
 <title>Lavhanan Laundry Hub - Final Requirement Document | Docs</title>
-<link rel="stylesheet" href="../../assets/style.css?v=mwx1kpn5">
+<link rel="stylesheet" href="../../assets/style.css?v=mwxnsgyw">
 </head>
 <body data-page="its-304/projects/lavhanan-laundry-hub-final-requirement-document.html" data-root="../../" class="">
 <nav class="navbar"><div class="navbar-inner"><button class="hamburger" type="button" aria-label="Toggle navigation"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button><a class="navbar-brand" href="../../"><svg class="logo" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span>Docs</span></a><div class="navbar-search"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" placeholder="Search docs…" aria-label="Search" spellcheck="false"></div><a class="navbar-graph" href="../../graph.html" aria-label="Open graph view"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="3"/><circle cx="19" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M12 15v-3"/><path d="M7.5 7.5 10 12l2 1"/><path d="M16.5 7.5 14 12l-2 1"/></svg><span>Graph</span></a></div></nav><div class="search-results" role="listbox"></div>
@@ -35,6 +35,7 @@
 <blockquote>
 <ul>
 <li>Chapter II: Themes 1-5, the 10-study Related Studies table, the Synthesis, and 16 consolidated references are written below; source verification and Word transfer are still pending.</li>
+<li>Chapter III / Appendices A/B/G: Sham&#39;s draft is integrated; facts/consent and Appendices C-F are still open.</li>
 </ul>
 </blockquote>
 <blockquote>
@@ -49,7 +50,7 @@
 </blockquote>
 <blockquote>
 <ul>
-<li>Appendices A–G (G is a stub: user manual / demo accounts)</li>
+<li>Appendices A, B, and G are drafted below from the Chapter III outlines and project notes and were confirmed on 2026-11-26; C–F remain stubs. Dates, interview participants, consent copies, sample documents, and screenshot references stay as <code>[MISSING]</code>, so the checklist&#39;s §7 appendix items stay unticked until the content is in the Word file.</li>
 </ul>
 </blockquote>
 <blockquote>
@@ -317,7 +318,7 @@
 <h2 id="design">Design</h2>
 <p>This project used the <strong>V-model</strong> as its systems development model. The V-model is a variation of the waterfall model that makes verification and validation explicit: each development phase on the left side is paired with a testing phase on the right side. This structure fits the project because the requirements were gathered from a real shop and needed to be traceable from design to testing.</p>
 <p><strong>Figure 1 - V-model.</strong></p>
-<p><img src="../../assets/ITS%20304/projects/figures/required/figure-01-v-model.png" alt="embed" loading="lazy"></p>
+<p><img src="../../assets/ITS%20304/projects/figures/required/Vmodel.drawio.png" alt="embed" loading="lazy"></p>
 <h3 id="requirements-analysis">Requirements Analysis</h3>
 <p>The team interviewed the owner and staff, observed the shop&#39;s workflow, and reviewed sample logbooks and receipts. The output was a list of functional and non-functional requirements: order recording, item counts, payment tracking, status updates, SMS notifications, sales reports, role-based access, and thermal receipt printing.</p>
 <h3 id="system-design">System Design</h3>
@@ -340,9 +341,9 @@
 <h2 id="instrument-use-in-data-gathering">Instrument Use in Data Gathering</h2>
 <p>The team used three instruments:</p>
 <ol>
-<li><p><strong>Semi-structured interview guide.</strong> Questions for the owner, manager, cashier, and labandera about the current workflow, pain points, reporting needs, customer communication, roles, and hardware.</p>
+<li><p><strong>Semi-structured interview guide.</strong> Questions for the owner, manager, cashier, and labandera about the current workflow, pain points, reporting needs, customer communication, roles, and hardware. The full guide is in Appendix A.</p>
 </li>
-<li><p><strong>Observation checklist.</strong> A guided observation of order intake, weighing, receipt writing, status updates, pickup, and payment. The checklist recorded who performs each step, what documents are used, and where delays or errors occur.</p>
+<li><p><strong>Observation checklist.</strong> A guided observation of order intake, weighing, receipt writing, status updates, pickup, and payment. The checklist recorded who performs each step, what documents are used, and where delays or errors occur. The full checklist form is in Appendix B.</p>
 </li>
 <li><p><strong>Document review.</strong> Sample logbook pages, receipts, the price list, and promo materials were reviewed to understand the data the system must capture.</p>
 </li>
@@ -377,20 +378,9 @@
 <p>| Ready | How the customer is informed | Call/text |</p>
 <p>| Pickup | Verification and payment | Receipt/logbook |</p>
 <h2 id="data-gathering-procedures">Data Gathering Procedures</h2>
-<ol>
-<li><p><strong>Permission and orientation.</strong> A letter of permission was presented to the owner, followed by a short orientation on the project&#39;s purpose and the voluntary nature of participation.</p>
-</li>
-<li><p><strong>Interviews.</strong> The team interviewed the owner and representative staff at the shop. Responses were transcribed and grouped by theme (records, counts, follow-up, reports, customer communication, security).</p>
-</li>
-<li><p><strong>Observation.</strong> The team observed the order-to-pickup workflow on [MISSING: observation dates], using the observation checklist. Notes focused on handoffs, delays, and duplicate work.</p>
-</li>
-<li><p><strong>Document review.</strong> Sample receipts, logbook pages, and the service price list were collected and compared with the interview responses.</p>
-</li>
-<li><p><strong>Requirements consolidation.</strong> The team converted the findings into user stories and functional requirements, then reviewed them with the owner for correction and approval.</p>
-</li>
-<li><p><strong>Validation.</strong> The prototype was demonstrated to the owner/staff using the acceptance script. Feedback was recorded and minor adjustments were made before the final documentation.</p>
-</li>
-</ol>
+<p>The team gathered its data in six stages. First, a letter of permission [MISSING: signed permission letter copy] was presented to the owner of Lavhanan Laundry Hub, <strong>Viema Joy E. Villafuerte</strong>, followed by a short orientation on the purpose of the study and the voluntary nature of participation [MISSING: date of orientation]. Second, the team conducted semi-structured interviews with the owner and representative staff — the Manager, Cashier, and Labandera — at the shop on [MISSING: interview dates], with [MISSING: number of participants] participants in total [MISSING: participant names or initials, roles, times, and venue]. The responses were transcribed and grouped by theme: records, item counts, unpaid and unclaimed follow-up, sales reporting, customer communication, and security. Third, the team observed the order-to-pickup workflow using the observation checklist on [MISSING: observation dates], noting the handoffs, delays, and duplicate work that occur between the counter and the laundry area. Fourth, the team reviewed sample documents — receipts, logbook pages, and the service price list — collected on [MISSING: document collection dates] [MISSING: list of the specific documents obtained and whether each may appear in the appendix]. Fifth, the findings were converted into user stories and functional requirements covering order recording, exact clothing counts, payment tracking, status updates, SMS notifications, sales reports, role-based access, and 72 mm thermal receipt printing, and these were reviewed with the owner for correction and approval [MISSING: date of requirements validation]. Sixth, the completed prototype was demonstrated to the owner and staff using an acceptance script, the feedback was recorded, and minor adjustments were made before the final documentation [MISSING: demo/acceptance date and attendees].</p>
+<div class="callout" data-callout="note"><div class="callout-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg><span class="callout-title-text">Facts still to supply</span></div><div class="callout-content"><p>Signed permission letter and consent copy; interview dates and participants; observation dates and observers; document-collection dates and the documents obtained; requirements-validation and acceptance dates; whether the optional customer questionnaire was used.</p>
+</div></div>
 <h2 id="ethical-considerations">Ethical Considerations</h2>
 <p>Participation was voluntary, and participants were informed of the purpose of the study. Names and phone numbers were used only for demonstration and were replaced with seed/demo data in screenshots and appendices. Data was stored securely and handled in accordance with the <strong>Data Privacy Act of 2012 (RA 10173)</strong>.</p>
 <hr>
@@ -669,9 +659,62 @@
 <hr>
 <h1 id="appendices">APPENDICES</h1>
 <h2 id="appendix-a-interview-guide">Appendix A — Interview Guide</h2>
-<p>[MISSING: Appendix A — interview questions and consent statement]</p>
+<p>A semi-structured interview was used so that follow-up questions could be added during the session. Every participant received the same opening questions, followed by the set written for that participant&#39;s role.</p>
+<h3 id="a1-permission-and-consent">A.1 Permission and consent</h3>
+<div class="callout" data-callout="danger"><div class="callout-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.86 2h8.28L22 7.86v8.28L16.14 22H7.86L2 16.14V7.86z"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg><span class="callout-title-text">Missing</span></div><div class="callout-content"><p>[MISSING: signed permission letter and participant consent statement — insert the actual copy presented to the owner and to each participant]</p>
+</div></div>
+<h3 id="a2-common-questions-all-participants">A.2 Common questions (all participants)</h3>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Question</th><th>Purpose</th></tr></thead><tbody><tr><td>1</td><td>How do you record a new order today? What information do you write down?</td><td>Baseline of the manual workflow and the data the system must capture</td></tr><tr><td>2</td><td>How do you count the clothes, and what happens when a customer says an item is missing?</td><td>Item-count problem and dispute handling</td></tr><tr><td>3</td><td>How do you know which orders are unpaid or unclaimed? What do you do about them?</td><td>Follow-up pain point and reminder needs</td></tr><tr><td>4</td><td>How do you compute daily and monthly sales? How long does it take?</td><td>Reporting and manual-totalling problem</td></tr><tr><td>5</td><td>How do customers ask about their laundry status? How often?</td><td>Customer self-service and SMS requirements</td></tr><tr><td>6</td><td>Who uses the system, and what should each role be allowed to see or change?</td><td>Role matrix and access control</td></tr><tr><td>7</td><td>What devices, printer, and internet connection are available at the shop?</td><td>Deployment and hardware requirements</td></tr><tr><td>8</td><td>What would make the system easy or difficult to use in daily work?</td><td>Usability and training needs</td></tr></tbody></table></div>
+<h3 id="a3-owner-admin-questions">A.3 Owner / Admin questions</h3>
+<ol>
+<li>Which numbers do you need to see every day, and which every month?</li>
+<li>Who should be allowed to see sales and customer records?</li>
+<li>How do you currently create, change, or remove a staff account?</li>
+<li>What happens today when an order stays unclaimed for days?</li>
+<li>Would an automatic text message to the customer be acceptable to you? Why?</li>
+<li>What would you want the system to keep from the logbook and receipts?</li>
+</ol>
+<h3 id="a4-manager-questions">A.4 Manager questions</h3>
+<ol>
+<li>How do you monitor orders across the shop during the day?</li>
+<li>What do you do when a customer reports a missing item or a wrong total?</li>
+<li>Which records should the manager see but not change?</li>
+<li>What information do you need when a customer calls to ask about an order?</li>
+</ol>
+<h3 id="a5-cashier-questions">A.5 Cashier questions</h3>
+<ol>
+<li>Walk through one order from the customer arriving to the receipt being handed over.</li>
+<li>How is the price computed, and how are add-ons and loads counted?</li>
+<li>How is paid versus unpaid decided, and how is it recorded?</li>
+<li>What happens when an order is edited or cancelled after it is recorded?</li>
+<li>Which parts of the order form would slow you down if they were required?</li>
+</ol>
+<h3 id="a6-labandera-questions">A.6 Labandera questions</h3>
+<ol>
+<li>How do you know which laundry to work on next?</li>
+<li>How and when is a status change communicated to the counter?</li>
+<li>Where do mix-ups between customers&#39; clothes usually happen?</li>
+<li>Would one-click status buttons (Washing → Drying → Folding → Ready) fit your work?</li>
+</ol>
+<h3 id="a7-optional-customer-questions">A.7 Optional customer questions</h3>
+<ol>
+<li>How do you currently find out whether your laundry is ready?</li>
+<li>Would you use a phone page that shows the status and the amount due?</li>
+<li>Would you prefer a text message, a page you open yourself, or both?</li>
+</ol>
+<h3 id="a8-interview-record">A.8 Interview record</h3>
+<p>[MISSING: participant names or initials, role, interview date, time, venue, and interviewer — one row per session; also confirm whether the optional customer questions were used]</p>
+<div class="table-wrap"><table><thead><tr><th>Participant (initials)</th><th>Role</th><th>Date</th><th>Time</th><th>Venue</th><th>Interviewer</th><th>Notes</th></tr></thead><tbody><tr><td>[MISSING]</td><td>Owner/Admin</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>[MISSING]</td><td>Manager</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>[MISSING]</td><td>Cashier</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>[MISSING]</td><td>Labandera</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td><td>[MISSING]</td></tr></tbody></table></div>
 <h2 id="appendix-b-observation-checklist">Appendix B — Observation Checklist</h2>
-<p>[MISSING: Appendix B — observation form and completed notes]</p>
+<p>The team used this checklist to observe the shop&#39;s order-to-pickup workflow directly, recording who performs each step, which documents are used, and where delays or duplicate work occur.</p>
+<h3 id="b1-observation-header">B.1 Observation header</h3>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Entry</th></tr></thead><tbody><tr><td>Observation date</td><td>[MISSING: observation date]</td></tr><tr><td>Time started / ended</td><td>[MISSING]</td></tr><tr><td>Observer(s)</td><td>[MISSING]</td></tr><tr><td>Shop / branch observed</td><td>Lavhanan Laundry Hub, 91P Burgos St., Sindangan, Zamboanga del Norte</td></tr><tr><td>Staff present (roles)</td><td>[MISSING]</td></tr><tr><td>Approximate orders observed</td><td>[MISSING]</td></tr><tr><td>Weather / shop conditions</td><td>[MISSING]</td></tr></tbody></table></div>
+<h3 id="b2-step-checklist">B.2 Step checklist</h3>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Step</th><th>What to observe</th><th>Records produced</th><th>Observed (✓/✗)</th><th>Notes</th></tr></thead><tbody><tr><td>1</td><td>Customer arrives</td><td>Greeting, capture of name and phone number</td><td>Logbook entry</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>2</td><td>Order intake</td><td>Service chosen, weighing, load count, clothing item count</td><td>Paper receipt</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>3</td><td>Payment</td><td>Paid/unpaid decision and how it is marked</td><td>Receipt mark</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>4</td><td>Washing</td><td>Who updates progress, and how</td><td>Verbal or paper note</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>5</td><td>Ready</td><td>How the customer is informed</td><td>Call or text</td><td>[MISSING]</td><td>[MISSING]</td></tr><tr><td>6</td><td>Pickup</td><td>Verification of the order and final payment</td><td>Receipt or logbook entry</td><td>[MISSING]</td><td>[MISSING]</td></tr></tbody></table></div>
+<h3 id="b3-completed-observation-notes">B.3 Completed observation notes</h3>
+<p>[MISSING: completed observation notes — actual handoffs, delays, duplicate work, and errors seen during the visit(s)]</p>
+<h3 id="b4-sample-documents-collected">B.4 Sample documents collected</h3>
+<p>[MISSING: list of the documents actually obtained — logbook pages, sample receipts, price list, promo materials — with dates and whether each is cleared for use in the appendix]</p>
 <h2 id="appendix-c-sample-receipt-order-slip">Appendix C — Sample Receipt / Order Slip</h2>
 <p>[MISSING: Appendix C — sample thermal receipt and order slip]</p>
 <h2 id="appendix-d-additional-user-interface-screenshots">Appendix D — Additional User Interface Screenshots</h2>
@@ -681,15 +724,75 @@
 <h2 id="appendix-f-test-results-summary">Appendix F — Test Results Summary</h2>
 <p>[MISSING: Appendix F — test results summary (81 tests / 435 assertions)]</p>
 <h2 id="appendix-g-user-manual-demo-accounts">Appendix G — User Manual / Demo Accounts</h2>
-<p>[MISSING: Appendix G — user manual and demo-account list (roles, emails, password <code>lavhanan123</code>, run steps)]</p>
-<hr>
+<p>This appendix is the short manual for running and demonstrating the prototype. It is written for the panel and for shop staff who will try the system.</p>
+<h3 id="g1-what-the-system-is">G.1 What the system is</h3>
+<p>Lavhanan Laundry Hub is a web-based laundry management system for the shop at 91P Burgos St., Sindangan, Zamboanga del Norte (Mon–Sat, 7:30 a.m.–7:00 p.m.). It replaces the handwritten logbook and paper receipts with a shared database, role-based screens, a printable thermal receipt, SMS notifications, and automatic sales reports.</p>
+<h3 id="g2-starting-the-system">G.2 Starting the system</h3>
+<ol>
+<li>Start the database and supporting services:<div class="code-block" data-lang="bash"><div class="code-topbar"><span class="code-lang">bash</span><button class="code-copy" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>Copy</span></button></div><pre><code class="hljs">docker compose up -d</code></pre></div></li>
+<li>Load the demo data (idempotent — menu, accounts, and demo orders):<div class="code-block" data-lang="bash"><div class="code-topbar"><span class="code-lang">bash</span><button class="code-copy" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>Copy</span></button></div><pre><code class="hljs">symfony console app:seed-demo</code></pre></div></li>
+<li>Start the SMS worker in a separate terminal, so queued texts are delivered to the outbox:<div class="code-block" data-lang="bash"><div class="code-topbar"><span class="code-lang">bash</span><button class="code-copy" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>Copy</span></button></div><pre><code class="hljs">symfony console messenger:consume async</code></pre></div></li>
+<li>Start the web server on port 8002:<div class="code-block" data-lang="bash"><div class="code-topbar"><span class="code-lang">bash</span><button class="code-copy" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>Copy</span></button></div><pre><code class="hljs">symfony serve -d --port=8002</code></pre></div></li>
+<li>Open the app at <code>http://127.0.0.1:8002</code> (if the port is busy, check <code>symfony server:status</code>).</li>
+</ol>
+<h3 id="g3-demo-accounts">G.3 Demo accounts</h3>
+<p>All demo accounts use the password <strong><code>lavhanan123</code></strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Role</th><th>Email</th><th>Displayed name</th><th>Opens</th></tr></thead><tbody><tr><td>Owner / Admin</td><td><code>owner@lavhanan.test</code></td><td>Rosa Villanueva (fictional demo persona)</td><td>Dashboard, accounts, reports, SMS outbox</td></tr><tr><td>Manager</td><td><code>manager@lavhanan.test</code></td><td>Marco Reyes</td><td>All orders, no finances</td></tr><tr><td>Cashier</td><td><code>cashier@lavhanan.test</code></td><td>Jen Escodra</td><td>Create/edit own orders, mark paid</td></tr><tr><td>Labandera</td><td><code>labandera@lavhanan.test</code></td><td>Nena Salazar</td><td>Washing → Drying → Folding → Ready</td></tr><tr><td>Customer</td><td><code>customer@lavhanan.test</code></td><td>Anna Cruz</td><td>Own tickets only (<code>LH-DEMO-0001</code>)</td></tr></tbody></table></div>
+<blockquote>
+<p>The owner account uses the fictional name <strong>Rosa Villanueva</strong> so the screenshots do not expose the real owner&#39;s identity, <strong>Viema Joy E. Villafuerte</strong>.</p>
+</blockquote>
+<h3 id="g4-quick-start-by-role">G.4 Quick start by role</h3>
+<p><strong>Owner / Admin</strong></p>
+<ol>
+<li>Sign in with <code>owner@lavhanan.test</code>.</li>
+<li><code>/admin</code> — dashboard counters, laundry-on-hand chips, recent orders.</li>
+<li><code>/admin/users</code> — create, edit, reset the password of, disable, or delete a staff account.</li>
+<li><code>/admin/reports</code> — Today / This month / custom range; download the CSV from <code>/admin/reports/export</code>.</li>
+<li><code>/admin/sms</code> — read the outbox, filter by trigger, send a power-outage broadcast.</li>
+<li><code>/me</code> — change your own profile and password.</li>
+</ol>
+<p><strong>Manager</strong></p>
+<ol>
+<li>Sign in with <code>manager@lavhanan.test</code>.</li>
+<li><code>/orders</code> — search and filter all orders; open any order.</li>
+<li>Revert a status when a batch was advanced by mistake; financial reports and accounts are not available to this role.</li>
+</ol>
+<p><strong>Cashier</strong></p>
+<ol>
+<li>Sign in with <code>cashier@lavhanan.test</code>.</li>
+<li><code>/orders/new</code> — pick or create the customer, choose the service, enter weight and loads, add clothing counts and add-ons, set paid/unpaid, then Record order.</li>
+<li><code>/orders/{code}/receipt</code> — print the 72 mm thermal receipt.</li>
+<li><code>/orders/{code}/payment</code> — mark the order paid.</li>
+<li>Edit only your own orders; deleting an order with an unpaid balance is blocked.</li>
+</ol>
+<p><strong>Labandera</strong></p>
+<ol>
+<li>Sign in with <code>labandera@lavhanan.test</code>.</li>
+<li>Open an order and press the forward status button: Received → Washing → Drying → Folding → Ready for pickup.</li>
+<li>When an order becomes Ready, the system queues the “ready for pickup” SMS — watch it arrive at <code>/admin/sms</code> when signed in as the owner.</li>
+</ol>
+<p><strong>Customer</strong></p>
+<ol>
+<li>Sign in with <code>customer@lavhanan.test</code> (or register at <code>/register</code> with a new phone number).</li>
+<li><code>/my</code> — your tickets with status, amount due, and payment badge; the page refreshes every 30 seconds.</li>
+<li><code>/my/{code}</code> — status timeline and clothing counts for one ticket.</li>
+</ol>
+<p><strong>All roles</strong></p>
+<ul>
+<li><code>/me</code> — edit your profile and change your password.</li>
+<li><code>/help</code> — the quick-start cards for your role.</li>
+</ul>
+<h3 id="g5-troubleshooting">G.5 Troubleshooting</h3>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Page cannot connect</td><td>Containers or web server not running</td><td><code>docker compose up -d</code>, then <code>symfony serve -d --port=8002</code> and open <code>http://127.0.0.1:8002</code></td></tr><tr><td>No SMS appears in the outbox</td><td>Queue not consumed</td><td>Start <code>symfony console messenger:consume async</code> and repeat the action</td></tr><tr><td>Login rejected</td><td>Wrong demo account or disabled account</td><td>Use the G.3 table; the password is <code>lavhanan123</code></td></tr><tr><td>Staff sees a 403 on <code>/admin</code></td><td>Role does not permit it</td><td>Expected behaviour — the access rules are part of the design</td></tr><tr><td>Receipt prints at the wrong width</td><td>Print dialog paper size</td><td>Choose the 72 mm / thermal roll paper size in the browser print dialog</td></tr></tbody></table></div>
+<h3 id="g6-screenshot-references">G.6 Screenshot references</h3>
+<p>[MISSING: cross-reference each step above to the Figure 8 contact sheet or the individual files in <code>figures/ui/</code> — per-role screenshot numbers are not yet assigned in the draft]</p>
 
 </div>
 <div class="page-nav"><a class="pg-prev" href="../../its-304/projects/lavhanan-laundry-hub-final-requirement-checklist.html"><span class="pg-label">Previous</span><span class="pg-title">Lavhanan Laundry Hub - Final Requirement Checklist</span></a><a class="pg-next" href="../../its-304/projects/lavhanan-laundry-hub-final-requirement-progress-context.html"><span class="pg-label">Next</span><span class="pg-title">Lavhanan Laundry Hub - Final Requirement Progress &amp; Context</span></a></div>
 <footer class="doc-footer">Copyright © 2026 Docs. Built with <a href="#">Docs Site Export</a>.</footer>
 </div></main>
-<aside class="sidebar sidebar-right"><h4 class="toc-heading">On this page</h4><nav class="toc"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#the-problem">The Problem</a></li><li><a href="#beneficiaries">Beneficiaries</a></li><li><a href="#scope-and-limitations-of-the-design">Scope and Limitations of the Design</a></li><li><a href="#introduction-to-the-review">Introduction to the Review</a></li><li><a href="#related-literature">Related Literature</a><ul><li><a href="#laundry-and-service-business-management-systems">Laundry and Service-Business Management Systems</a></li><li><a href="#sms-notifications-and-automated-customer-reminders">SMS Notifications and Automated Customer Reminders</a></li><li><a href="#order-status-tracking-and-customer-self-service">Order-Status Tracking and Customer Self-Service</a></li><li><a href="#role-based-access-control-and-data-privacy">Role-Based Access Control and Data Privacy</a></li><li><a href="#systems-development-models">Systems Development Models</a></li></ul></li><li><a href="#related-studies">Related Studies</a></li><li><a href="#synthesis">Synthesis</a></li><li><a href="#references">References</a></li><li><a href="#design">Design</a><ul><li><a href="#requirements-analysis">Requirements Analysis</a></li><li><a href="#system-design">System Design</a></li><li><a href="#implementation">Implementation</a></li><li><a href="#testing">Testing</a></li></ul></li><li><a href="#instrument-use-in-data-gathering">Instrument Use in Data Gathering</a><ul><li><a href="#interview-guide-outline">Interview Guide (outline)</a></li><li><a href="#observation-checklist-outline">Observation Checklist (outline)</a></li></ul></li><li><a href="#data-gathering-procedures">Data Gathering Procedures</a></li><li><a href="#ethical-considerations">Ethical Considerations</a></li><li><a href="#project-description">Project Description</a></li><li><a href="#technical-background">Technical Background</a></li><li><a href="#system-design-1">System Design</a></li><li><a href="#logical-design">Logical Design</a><ul><li><a href="#data-flow-diagram">Data Flow Diagram</a></li><li><a href="#context-diagram">Context Diagram</a></li><li><a href="#use-case-diagram">Use Case Diagram</a></li><li><a href="#class-diagram">Class Diagram</a></li><li><a href="#activity-diagram">Activity Diagram</a></li><li><a href="#entity-relationship-diagram-chen-notation">Entity Relationship Diagram (Chen Notation)</a></li><li><a href="#data-entity-diagram">Data Entity Diagram</a></li><li><a href="#data-dictionary">Data Dictionary</a><ul><li><a href="#users">users</a></li><li><a href="#customers">customers</a></li><li><a href="#services">services</a></li><li><a href="#laundryorders">laundry_orders</a></li><li><a href="#orderitems">order_items</a></li><li><a href="#orderaddons">order_addons</a></li><li><a href="#orderstatuslogs">order_status_logs</a></li><li><a href="#smslogs">sms_logs</a></li></ul></li></ul></li><li><a href="#physical-design">Physical Design</a><ul><li><a href="#architectural-diagram">Architectural Diagram</a></li><li><a href="#deployment-diagram">Deployment Diagram</a></li><li><a href="#component-diagram">Component Diagram</a></li><li><a href="#user-interface">User Interface</a></li><li><a href="#hardware-requirements">Hardware Requirements</a><ul><li><a href="#minimum-requirements">Minimum Requirements</a></li><li><a href="#recommended-requirements">Recommended Requirements</a></li></ul></li></ul></li><li><a href="#appendix-a-interview-guide">Appendix A — Interview Guide</a></li><li><a href="#appendix-b-observation-checklist">Appendix B — Observation Checklist</a></li><li><a href="#appendix-c-sample-receipt-order-slip">Appendix C — Sample Receipt / Order Slip</a></li><li><a href="#appendix-d-additional-user-interface-screenshots">Appendix D — Additional User Interface Screenshots</a></li><li><a href="#appendix-e-selected-source-code-excerpts">Appendix E — Selected Source Code Excerpts</a></li><li><a href="#appendix-f-test-results-summary">Appendix F — Test Results Summary</a></li><li><a href="#appendix-g-user-manual-demo-accounts">Appendix G — User Manual / Demo Accounts</a></li></ul></nav></aside>
+<aside class="sidebar sidebar-right"><h4 class="toc-heading">On this page</h4><nav class="toc"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#the-problem">The Problem</a></li><li><a href="#beneficiaries">Beneficiaries</a></li><li><a href="#scope-and-limitations-of-the-design">Scope and Limitations of the Design</a></li><li><a href="#introduction-to-the-review">Introduction to the Review</a></li><li><a href="#related-literature">Related Literature</a><ul><li><a href="#laundry-and-service-business-management-systems">Laundry and Service-Business Management Systems</a></li><li><a href="#sms-notifications-and-automated-customer-reminders">SMS Notifications and Automated Customer Reminders</a></li><li><a href="#order-status-tracking-and-customer-self-service">Order-Status Tracking and Customer Self-Service</a></li><li><a href="#role-based-access-control-and-data-privacy">Role-Based Access Control and Data Privacy</a></li><li><a href="#systems-development-models">Systems Development Models</a></li></ul></li><li><a href="#related-studies">Related Studies</a></li><li><a href="#synthesis">Synthesis</a></li><li><a href="#references">References</a></li><li><a href="#design">Design</a><ul><li><a href="#requirements-analysis">Requirements Analysis</a></li><li><a href="#system-design">System Design</a></li><li><a href="#implementation">Implementation</a></li><li><a href="#testing">Testing</a></li></ul></li><li><a href="#instrument-use-in-data-gathering">Instrument Use in Data Gathering</a><ul><li><a href="#interview-guide-outline">Interview Guide (outline)</a></li><li><a href="#observation-checklist-outline">Observation Checklist (outline)</a></li></ul></li><li><a href="#data-gathering-procedures">Data Gathering Procedures</a></li><li><a href="#ethical-considerations">Ethical Considerations</a></li><li><a href="#project-description">Project Description</a></li><li><a href="#technical-background">Technical Background</a></li><li><a href="#system-design-1">System Design</a></li><li><a href="#logical-design">Logical Design</a><ul><li><a href="#data-flow-diagram">Data Flow Diagram</a></li><li><a href="#context-diagram">Context Diagram</a></li><li><a href="#use-case-diagram">Use Case Diagram</a></li><li><a href="#class-diagram">Class Diagram</a></li><li><a href="#activity-diagram">Activity Diagram</a></li><li><a href="#entity-relationship-diagram-chen-notation">Entity Relationship Diagram (Chen Notation)</a></li><li><a href="#data-entity-diagram">Data Entity Diagram</a></li><li><a href="#data-dictionary">Data Dictionary</a><ul><li><a href="#users">users</a></li><li><a href="#customers">customers</a></li><li><a href="#services">services</a></li><li><a href="#laundryorders">laundry_orders</a></li><li><a href="#orderitems">order_items</a></li><li><a href="#orderaddons">order_addons</a></li><li><a href="#orderstatuslogs">order_status_logs</a></li><li><a href="#smslogs">sms_logs</a></li></ul></li></ul></li><li><a href="#physical-design">Physical Design</a><ul><li><a href="#architectural-diagram">Architectural Diagram</a></li><li><a href="#deployment-diagram">Deployment Diagram</a></li><li><a href="#component-diagram">Component Diagram</a></li><li><a href="#user-interface">User Interface</a></li><li><a href="#hardware-requirements">Hardware Requirements</a><ul><li><a href="#minimum-requirements">Minimum Requirements</a></li><li><a href="#recommended-requirements">Recommended Requirements</a></li></ul></li></ul></li><li><a href="#appendix-a-interview-guide">Appendix A — Interview Guide</a><ul><li><a href="#a1-permission-and-consent">A.1 Permission and consent</a></li><li><a href="#a2-common-questions-all-participants">A.2 Common questions (all participants)</a></li><li><a href="#a3-owner-admin-questions">A.3 Owner / Admin questions</a></li><li><a href="#a4-manager-questions">A.4 Manager questions</a></li><li><a href="#a5-cashier-questions">A.5 Cashier questions</a></li><li><a href="#a6-labandera-questions">A.6 Labandera questions</a></li><li><a href="#a7-optional-customer-questions">A.7 Optional customer questions</a></li><li><a href="#a8-interview-record">A.8 Interview record</a></li></ul></li><li><a href="#appendix-b-observation-checklist">Appendix B — Observation Checklist</a><ul><li><a href="#b1-observation-header">B.1 Observation header</a></li><li><a href="#b2-step-checklist">B.2 Step checklist</a></li><li><a href="#b3-completed-observation-notes">B.3 Completed observation notes</a></li><li><a href="#b4-sample-documents-collected">B.4 Sample documents collected</a></li></ul></li><li><a href="#appendix-c-sample-receipt-order-slip">Appendix C — Sample Receipt / Order Slip</a></li><li><a href="#appendix-d-additional-user-interface-screenshots">Appendix D — Additional User Interface Screenshots</a></li><li><a href="#appendix-e-selected-source-code-excerpts">Appendix E — Selected Source Code Excerpts</a></li><li><a href="#appendix-f-test-results-summary">Appendix F — Test Results Summary</a></li><li><a href="#appendix-g-user-manual-demo-accounts">Appendix G — User Manual / Demo Accounts</a><ul><li><a href="#g1-what-the-system-is">G.1 What the system is</a></li><li><a href="#g2-starting-the-system">G.2 Starting the system</a></li><li><a href="#g3-demo-accounts">G.3 Demo accounts</a></li><li><a href="#g4-quick-start-by-role">G.4 Quick start by role</a></li><li><a href="#g5-troubleshooting">G.5 Troubleshooting</a></li><li><a href="#g6-screenshot-references">G.6 Screenshot references</a></li></ul></li></ul></nav></aside>
 </div>
-<script src="../../assets/site.js?v=mwx1kpn5"></script>
+<script src="../../assets/site.js?v=mwxnsgyw"></script>
 </body>
 </html>
